@@ -16,16 +16,54 @@
 {
     if (self = [super init])
     {
-        int result = sqlite3_open([databaseFileName UTF8String], &database_);
-        if (result != SQLITE_OK)
+        [self setDatabasePath: databaseFileName];
+        if ([self copyDatabaseIntoDocumentsDirectory: databaseFileName])
         {
-            #if LOG_SQL_LITE_ERRORS
-                NSLog(@"Sql: Failed to open file");
-            #endif
+            int result = sqlite3_open([self.databasePath UTF8String], &database_);
+            if (result != SQLITE_OK)
+            {
+                #if LOG_SQL_LITE_ERRORS
+                    const char* errorText = database_ != NULL ? sqlite3_errmsg(database_) : NULL ;
+                    NSString* errorString = errorText != NULL ? [NSString stringWithUTF8String: errorText] : @"Unknown sqllite error";
+                    NSLog(@"Sql: Failed to open file with error: (%@)", errorString);
+                #endif
+
+                NSLog(@"Sql: Fatal Error.");
+            }
         }
     }
 
     return self;
+}
+
+@synthesize databasePath = databasePath_;
+
+-(void) setDatabasePath: (NSString*) databaseFileName
+{
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = paths[0];
+    databasePath_ = [documentsDirectory stringByAppendingPathComponent:databaseFileName];
+}
+
+-(BOOL) copyDatabaseIntoDocumentsDirectory: (NSString*) databaseFileName
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath: self.databasePath])
+    {
+        NSString* sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: databaseFileName];
+        NSError* error;
+        [[NSFileManager defaultManager] copyItemAtPath: sourcePath toPath: self.databasePath error: &error];
+
+        if (error)
+        {
+            #if LOG_SQL_LITE_ERRORS
+                NSLog(@"Error copying the database to the documents folder %@", [error localizedDescription]);
+            #endif
+
+            return NO;
+        }
+    }
+
+    return YES;
 }
 
 -(BOOL) beginTransaction

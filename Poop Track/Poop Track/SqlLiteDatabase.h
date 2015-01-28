@@ -10,6 +10,7 @@
 
 @private
     sqlite3* database_;
+    NSString* databasePath_;
 }
 
 - (id) initWithDatabaseFileName: (NSString*) databaseFileName;
@@ -20,4 +21,5 @@
 -(void) rollbackTransaction;
 -(BOOL) commitTransaction;
 
+@property (nonatomic, retain) NSString* databasePath;
 @end
