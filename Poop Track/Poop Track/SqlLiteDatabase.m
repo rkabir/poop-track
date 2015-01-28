@@ -4,6 +4,7 @@
 //
 
 #import "SqlLiteDatabase.h"
+#import "SqlLite3Statement.h"
 
 
 #define LOG_SQL_LITE_ERRORS 1
@@ -89,12 +90,35 @@
     {
         #if LOG_SQL_LITE_ERRORS
             NSLog(@"Sql: Failed to create a statement from the string: %@", sqlString);
+
+            const char* errorText = database_ != NULL ? sqlite3_errmsg(database_) : NULL ;
+            NSString* errorString = errorText != NULL ? [NSString stringWithUTF8String: errorText] : @"Unknown sqllite error";
+            NSLog(@"SQL ERROR: %@", errorString);
         #endif
 
         return nil;
     }
 
     return statement;
+}
+
+-(BOOL) finalizeStatement: (sqlite3_stmt*) statement
+{
+    int result = sqlite3_finalize(statement);
+    if (result != SQLITE_OK)
+    {
+        #if LOG_SQL_LITE_ERRORS
+                NSLog(@"Sql: Failed to finalize statement");
+
+                const char* errorText = database_ != NULL ? sqlite3_errmsg(database_) : NULL ;
+                NSString* errorString = errorText != NULL ? [NSString stringWithUTF8String: errorText] : @"Unknown sqllite error";
+                NSLog(@"SQL ERROR: %@", errorString);
+        #endif
+
+        return NO;
+    }
+
+    return YES;
 }
 
 -(BOOL) executeSql: (NSString*) sql
@@ -125,30 +149,21 @@
     }
 
     int result = sqlite3_step(statement);
-    if (result != SQLITE_DONE)
-        return NO;
-
-    return YES;
+    return result == SQLITE_DONE;
 }
 
 - (NSArray*) executeStatement: (sqlite3_stmt*) statement processorTarget: (id) target processorSelector: (SEL) processor
 {
-    if (sqlite3_get_autocommit(database_) == 1)
-    {
-        #if LOG_SQL_LITE_ERRORS
-            NSLog(@"Sql executed without a transaction");
-        #endif
-        return nil;
-    }
-
     NSMutableArray* results = [NSMutableArray array];
     int result = SQLITE_OK;
+
+    SqlLite3Statement* statementObject = [[SqlLite3Statement alloc] init: statement];
     while ((result = sqlite3_step(statement)) != SQLITE_DONE)
     {
         if (result != SQLITE_ROW)
             return nil;
 
-        NSObject* rowResult = [target performSelector: processor withObject: (__bridge id)statement];
+        NSObject* rowResult = [target performSelector: processor withObject: statementObject];
         if (!rowResult)
             return nil;
 
@@ -158,3 +173,4 @@
     return results;
 }
 @end
+

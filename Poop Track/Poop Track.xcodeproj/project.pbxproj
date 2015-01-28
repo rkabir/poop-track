@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		13FFB1BD56421E945863B931 /* PoopDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFB3D81C18355B939E9F88 /* PoopDatabase.m */; };
 		13FFB36549946935D838E9F8 /* SqlLiteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFB5ACF1F0F31D227FF2AB /* SqlLiteDatabase.m */; };
+		13FFB6B5B4EB9F9324C4E4DD /* PoopType.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFB26ADFBD4E6DFFD61BAD /* PoopType.m */; };
 		13FFB7496E33B730D4B21EB8 /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFB958BA70E8AB756C3A04 /* AppModel.m */; };
+		13FFBB16F093A023F40FFBF4 /* SqlLite3Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFB7D522B851129800D9DD /* SqlLite3Statement.m */; };
+		13FFBD569A961ACB05FE8268 /* PoopDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 13FFB4B09BBDE4BC3BE9CE0B /* PoopDatabase.sqlite */; };
 		353A1B811A7842B50069D8F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B801A7842B50069D8F2 /* main.m */; };
 		353A1B841A7842B50069D8F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B831A7842B50069D8F2 /* AppDelegate.m */; };
 		353A1B871A7842B50069D8F2 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B861A7842B50069D8F2 /* LogViewController.m */; };
@@ -19,7 +22,6 @@
 		353A1B921A7842B50069D8F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 353A1B901A7842B50069D8F2 /* LaunchScreen.xib */; };
 		353A1B9E1A7842B50069D8F2 /* Poop_TrackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B9D1A7842B50069D8F2 /* Poop_TrackTests.m */; };
 		353A1BA81A7855DC0069D8F2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 353A1BA71A7855DC0069D8F2 /* libsqlite3.dylib */; };
-		353A1BAA1A78684B0069D8F2 /* PoopDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 353A1BA91A78684B0069D8F2 /* PoopDatabase.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +36,15 @@
 
 /* Begin PBXFileReference section */
 		13FFB22E190C31851D8654FA /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
+		13FFB26ADFBD4E6DFFD61BAD /* PoopType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoopType.m; sourceTree = "<group>"; };
 		13FFB3D81C18355B939E9F88 /* PoopDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoopDatabase.m; sourceTree = "<group>"; };
 		13FFB43F37632183B9C0F316 /* SqlLiteDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLiteDatabase.h; sourceTree = "<group>"; };
+		13FFB4B09BBDE4BC3BE9CE0B /* PoopDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file.sqlite; name = PoopDatabase.sqlite; path = "Poop Track/Database/PoopDatabase.sqlite"; sourceTree = "<group>"; };
 		13FFB5ACF1F0F31D227FF2AB /* SqlLiteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLiteDatabase.m; sourceTree = "<group>"; };
 		13FFB5BE21746666CC8C0B98 /* PoopDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoopDatabase.h; sourceTree = "<group>"; };
+		13FFB6EC81F9006F05C73401 /* SqlLite3Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLite3Statement.h; sourceTree = "<group>"; };
+		13FFB7D522B851129800D9DD /* SqlLite3Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLite3Statement.m; sourceTree = "<group>"; };
+		13FFB92C18E7CF844018F89A /* PoopType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoopType.h; sourceTree = "<group>"; };
 		13FFB958BA70E8AB756C3A04 /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		353A1B7B1A7842B50069D8F2 /* Poop Track.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poop Track.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353A1B7F1A7842B50069D8F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +62,6 @@
 		353A1B9C1A7842B50069D8F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		353A1B9D1A7842B50069D8F2 /* Poop_TrackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Poop_TrackTests.m; sourceTree = "<group>"; };
 		353A1BA71A7855DC0069D8F2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		353A1BA91A78684B0069D8F2 /* PoopDatabase.sqlite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PoopDatabase.sqlite; path = "Poop Track/Database/PoopDatabase.sqlite"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +86,11 @@
 		353A1B721A7842B50069D8F2 = {
 			isa = PBXGroup;
 			children = (
-				353A1BA91A78684B0069D8F2 /* PoopDatabase.sqlite */,
 				353A1BA71A7855DC0069D8F2 /* libsqlite3.dylib */,
 				353A1B7D1A7842B50069D8F2 /* Poop Track */,
 				353A1B9A1A7842B50069D8F2 /* Poop TrackTests */,
 				353A1B7C1A7842B50069D8F2 /* Products */,
+				13FFB4B09BBDE4BC3BE9CE0B /* PoopDatabase.sqlite */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +122,10 @@
 				13FFB5BE21746666CC8C0B98 /* PoopDatabase.h */,
 				13FFB958BA70E8AB756C3A04 /* AppModel.m */,
 				13FFB22E190C31851D8654FA /* AppModel.h */,
+				13FFB26ADFBD4E6DFFD61BAD /* PoopType.m */,
+				13FFB92C18E7CF844018F89A /* PoopType.h */,
+				13FFB7D522B851129800D9DD /* SqlLite3Statement.m */,
+				13FFB6EC81F9006F05C73401 /* SqlLite3Statement.h */,
 			);
 			path = "Poop Track";
 			sourceTree = "<group>";
@@ -228,8 +238,8 @@
 			files = (
 				353A1B8D1A7842B50069D8F2 /* Main.storyboard in Resources */,
 				353A1B921A7842B50069D8F2 /* LaunchScreen.xib in Resources */,
-				353A1BAA1A78684B0069D8F2 /* PoopDatabase.sqlite in Resources */,
 				353A1B8F1A7842B50069D8F2 /* Images.xcassets in Resources */,
+				13FFBD569A961ACB05FE8268 /* PoopDatabase.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +264,8 @@
 				13FFB36549946935D838E9F8 /* SqlLiteDatabase.m in Sources */,
 				13FFB1BD56421E945863B931 /* PoopDatabase.m in Sources */,
 				13FFB7496E33B730D4B21EB8 /* AppModel.m in Sources */,
+				13FFB6B5B4EB9F9324C4E4DD /* PoopType.m in Sources */,
+				13FFBB16F093A023F40FFBF4 /* SqlLite3Statement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

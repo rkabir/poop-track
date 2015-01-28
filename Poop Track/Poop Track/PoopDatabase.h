@@ -10,4 +10,5 @@
 @interface PoopDatabase : SqlLiteDatabase
 
 - (id) init;
+- (NSArray*) getPoopTypes;
 @end

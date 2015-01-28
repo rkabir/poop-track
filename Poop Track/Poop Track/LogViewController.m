@@ -1,5 +1,5 @@
 //
-//  FirstViewController.m
+//  LogViewController.m
 //  Poop Track
 //
 //  Created by Raj Sathi on 1/27/15.
@@ -8,11 +8,11 @@
 
 #import "LogViewController.h"
 
-@interface FirstViewController ()
+@interface LogViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation LogViewController
 
 
 - (void) loadView

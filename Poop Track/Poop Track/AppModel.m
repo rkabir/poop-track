@@ -4,6 +4,7 @@
 //
 
 #import "AppModel.h"
+#import "PoopType.h"
 
 
 @implementation AppModel
@@ -23,9 +24,19 @@
 {
     if (self = [super init])
     {
-         poopDatabase_ = [[PoopDatabase alloc] init];
+        poopDatabase_ = [[PoopDatabase alloc] init];
+        [self testTypes];
     }
 
     return self;
+}
+
+- (void) testTypes
+{
+    NSArray* test = [poopDatabase_ getPoopTypes];
+    for (PoopType* type in test)
+    {
+        NSLog(@"Poop Type: (%d) - %@", type.id, type.description);
+    }
 }
 @end

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  LogViewController.h
 //  Poop Track
 //
 //  Created by Raj Sathi on 1/27/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface LogViewController : UIViewController
 
 
 @end

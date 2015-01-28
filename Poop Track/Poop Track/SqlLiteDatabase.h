@@ -6,6 +6,8 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
+
+
 @interface SqlLiteDatabase : NSObject {
 
 @private
@@ -13,9 +15,11 @@
     NSString* databasePath_;
 }
 
-- (id) initWithDatabaseFileName: (NSString*) databaseFileName;
+-(id) initWithDatabaseFileName: (NSString*) databaseFileName;
 -(sqlite3_stmt*) getStatement: (NSString*) sql;
+-(BOOL) finalizeStatement: (sqlite3_stmt*) statement;
 -(BOOL) executeStatement: (sqlite3_stmt*) statement;
+-(NSArray*) executeStatement: (sqlite3_stmt*) statement processorTarget: (id) target processorSelector: (SEL) processor;
 
 -(BOOL) beginTransaction;
 -(void) rollbackTransaction;
