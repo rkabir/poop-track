@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 RajSathi. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "LogViewController.h"
 
 @interface FirstViewController ()
 
@@ -14,12 +14,20 @@
 
 @implementation FirstViewController
 
-- (void)viewDidLoad {
+
+- (void) loadView
+{
+    [super loadView];
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

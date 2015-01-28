@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13FFB36549946935D838E9F8 /* SqlLiteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFB5ACF1F0F31D227FF2AB /* SqlLiteDatabase.m */; };
 		353A1B811A7842B50069D8F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B801A7842B50069D8F2 /* main.m */; };
 		353A1B841A7842B50069D8F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B831A7842B50069D8F2 /* AppDelegate.m */; };
-		353A1B871A7842B50069D8F2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B861A7842B50069D8F2 /* FirstViewController.m */; };
+		353A1B871A7842B50069D8F2 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B861A7842B50069D8F2 /* LogViewController.m */; };
 		353A1B8A1A7842B50069D8F2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B891A7842B50069D8F2 /* SecondViewController.m */; };
 		353A1B8D1A7842B50069D8F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 353A1B8B1A7842B50069D8F2 /* Main.storyboard */; };
 		353A1B8F1A7842B50069D8F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353A1B8E1A7842B50069D8F2 /* Images.xcassets */; };
 		353A1B921A7842B50069D8F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 353A1B901A7842B50069D8F2 /* LaunchScreen.xib */; };
 		353A1B9E1A7842B50069D8F2 /* Poop_TrackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A1B9D1A7842B50069D8F2 /* Poop_TrackTests.m */; };
+		353A1BA81A7855DC0069D8F2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 353A1BA71A7855DC0069D8F2 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +30,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13FFB43F37632183B9C0F316 /* SqlLiteDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlLiteDatabase.h; sourceTree = "<group>"; };
+		13FFB5ACF1F0F31D227FF2AB /* SqlLiteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlLiteDatabase.m; sourceTree = "<group>"; };
 		353A1B7B1A7842B50069D8F2 /* Poop Track.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poop Track.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353A1B7F1A7842B50069D8F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		353A1B801A7842B50069D8F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		353A1B821A7842B50069D8F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		353A1B831A7842B50069D8F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		353A1B851A7842B50069D8F2 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		353A1B861A7842B50069D8F2 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		353A1B851A7842B50069D8F2 /* LogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		353A1B861A7842B50069D8F2 /* LogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		353A1B881A7842B50069D8F2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		353A1B891A7842B50069D8F2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		353A1B8C1A7842B50069D8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 		353A1B971A7842B50069D8F2 /* Poop TrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Poop TrackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353A1B9C1A7842B50069D8F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		353A1B9D1A7842B50069D8F2 /* Poop_TrackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Poop_TrackTests.m; sourceTree = "<group>"; };
+		353A1BA71A7855DC0069D8F2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				353A1BA81A7855DC0069D8F2 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,7 @@
 		353A1B721A7842B50069D8F2 = {
 			isa = PBXGroup;
 			children = (
+				353A1BA71A7855DC0069D8F2 /* libsqlite3.dylib */,
 				353A1B7D1A7842B50069D8F2 /* Poop Track */,
 				353A1B9A1A7842B50069D8F2 /* Poop TrackTests */,
 				353A1B7C1A7842B50069D8F2 /* Products */,
@@ -86,14 +93,16 @@
 			children = (
 				353A1B821A7842B50069D8F2 /* AppDelegate.h */,
 				353A1B831A7842B50069D8F2 /* AppDelegate.m */,
-				353A1B851A7842B50069D8F2 /* FirstViewController.h */,
-				353A1B861A7842B50069D8F2 /* FirstViewController.m */,
+				353A1B851A7842B50069D8F2 /* LogViewController.h */,
+				353A1B861A7842B50069D8F2 /* LogViewController.m */,
 				353A1B881A7842B50069D8F2 /* SecondViewController.h */,
 				353A1B891A7842B50069D8F2 /* SecondViewController.m */,
 				353A1B8B1A7842B50069D8F2 /* Main.storyboard */,
 				353A1B8E1A7842B50069D8F2 /* Images.xcassets */,
 				353A1B901A7842B50069D8F2 /* LaunchScreen.xib */,
 				353A1B7E1A7842B50069D8F2 /* Supporting Files */,
+				13FFB5ACF1F0F31D227FF2AB /* SqlLiteDatabase.m */,
+				13FFB43F37632183B9C0F316 /* SqlLiteDatabase.h */,
 			);
 			path = "Poop Track";
 			sourceTree = "<group>";
@@ -226,8 +235,9 @@
 			files = (
 				353A1B8A1A7842B50069D8F2 /* SecondViewController.m in Sources */,
 				353A1B841A7842B50069D8F2 /* AppDelegate.m in Sources */,
-				353A1B871A7842B50069D8F2 /* FirstViewController.m in Sources */,
+				353A1B871A7842B50069D8F2 /* LogViewController.m in Sources */,
 				353A1B811A7842B50069D8F2 /* main.m in Sources */,
+				13FFB36549946935D838E9F8 /* SqlLiteDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
