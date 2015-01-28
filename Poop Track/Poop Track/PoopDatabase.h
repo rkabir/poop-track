@@ -10,5 +10,6 @@
 @interface PoopDatabase : SqlLiteDatabase
 
 - (id) init;
+- (NSArray*) getPoopEntriesForDate: (int) date;
 - (NSArray*) getPoopTypes;
 @end

@@ -172,5 +172,19 @@
 
     return results;
 }
+
+-(BOOL) bindInt: (int) value forStatement: (sqlite3_stmt*) statement atIndex: (int) index
+{
+    int result = sqlite3_bind_int(statement, index, value);
+    if (result != SQLITE_OK)
+    {
+        #if LOG_SQL_LITE_ERRORS
+                NSLog(@"Sql: failed to bind int");
+        #endif
+        return NO ;
+    }
+
+    return YES ;
+}
 @end
 

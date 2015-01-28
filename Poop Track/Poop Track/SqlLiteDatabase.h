@@ -25,5 +25,7 @@
 -(void) rollbackTransaction;
 -(BOOL) commitTransaction;
 
+-(BOOL) bindInt: (int) value forStatement: (sqlite3_stmt*) statement atIndex: (int) index;
+
 @property (nonatomic, retain) NSString* databasePath;
 @end
